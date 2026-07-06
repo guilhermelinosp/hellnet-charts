@@ -6,7 +6,7 @@ version: 0.1.1
 appVersion: "1.0.0"
 annotations:
   artifacthub.io/changes: |
-    - Initial release of test-app
+    - Added ArtifactHub metadata annotations
   artifacthub.io/maintainers: |
     - name: guilhermelinosp
       email: guilhermelino@hellnet.com.br

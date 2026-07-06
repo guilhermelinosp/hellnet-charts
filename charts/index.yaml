@@ -3,16 +3,16 @@ entries:
   test-app:
   - annotations:
       artifacthub.io/changes: |
-        - Initial release of test-app
+        - Added ArtifactHub metadata annotations
       artifacthub.io/maintainers: |
         - name: guilhermelinosp
           email: guilhermelino@hellnet.com.br
       artifacthub.io/repository: hellnet
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-07-06T06:53:15.821825-03:00"
+    created: "2026-07-06T06:53:23.362368-03:00"
     description: A simple test chart for the hellnet Helm repository
-    digest: eb8e7dda8c89d730f261fa95b6a0098b34a1b739a8f5e2b8bd11c88bf812e5b3
+    digest: 46c6a232218a7978e84ddb234db64afc939c89088e6ff5b8fa2c4b4c79756bd9
     name: test-app
     type: application
     urls:
@@ -20,7 +20,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2026-07-06T06:53:15.821735-03:00"
+    created: "2026-07-06T06:53:23.362257-03:00"
     description: A Helm chart for Kubernetes
     digest: ef4e6a6c6e8a4023cc2d37ca1fe9ff2d6cd2f296d2b310aa69cbd814e73ba0d3
     name: test-app
@@ -28,4 +28,4 @@ entries:
     urls:
     - https://charts.hellnet.com.br/charts/test-app-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-06T06:53:15.821258-03:00"
+generated: "2026-07-06T06:53:23.362072-03:00"
