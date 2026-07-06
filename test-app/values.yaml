@@ -1,0 +1,4 @@
+name: test-app
+replicas: 1
+image: nginx:latest
+port: 80
