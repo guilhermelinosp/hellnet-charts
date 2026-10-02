@@ -1,0 +1,64 @@
+# Generic hellnet service. The release name is the name of every resource (Argo CD: the Application name).
+
+nameOverride: ""
+fullnameOverride: ""
+
+replicaCount: 1
+# Deployment strategy type ("Recreate" for singletons such as an outbox publisher); empty keeps RollingUpdate.
+strategy: ""
+
+image:
+  repository: ""   # required, e.g. ghcr.io/guilhermelinosp/my-service
+  tag: ""          # required, e.g. v1.2.3
+  pullPolicy: IfNotPresent
+
+# Override the image ENTRYPOINT/CMD (e.g. one image with several binaries).
+command: []
+args: []
+
+# HELLNET_SERVICE: service name reported by telemetry.
+serviceName: ""
+
+# Plain environment, rendered into a ConfigMap and loaded with envFrom.
+config: {}
+
+# Variables read from Secrets (the Secrets themselves are not managed by this chart):
+#   - {name: DATABASE_PASSWORD, secretName: my-db, key: DATABASE_PASSWORD}
+secretEnv: []
+
+# HTTP port of the container. 0 = the service has no HTTP port (no probes, no Service, no HTTPRoute).
+containerPort: 0
+
+probes:
+  liveness:
+    path: /live
+    initialDelaySeconds: 10
+    periodSeconds: 20
+  readiness:
+    path: /ready
+    periodSeconds: 10
+    failureThreshold: 6
+
+service:
+  enabled: true
+  port: 80
+
+# Gateway API HTTPRoute (requires containerPort and service.enabled).
+route:
+  enabled: false
+  hostnames: []
+  parentRef:
+    name: hellnet
+    namespace: kube-system
+    sectionName: https
+
+resources:
+  requests:
+    cpu: 20m
+    memory: 48Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+podLabels: {}
+podAnnotations: {}
