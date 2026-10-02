@@ -1,5 +1,24 @@
 apiVersion: v1
 entries:
+  hellnet-service:
+  - annotations:
+      artifacthub.io/changes: |
+        - Initial release
+      artifacthub.io/maintainers: |
+        - name: guilhermelinosp
+          email: guilhermelino@hellnet.com.br
+      artifacthub.io/repository: hellnet
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-10-01T22:05:25.95964-03:00"
+    description: Generic chart for a hellnet Go service (Deployment, optional Service
+      and Gateway API HTTPRoute) with restricted pod security
+    digest: 708af56eb624bea93fdff82190cb107f319ccf10eeeb3546cbd244b95bf1cd01
+    name: hellnet-service
+    type: application
+    urls:
+    - https://charts.hellnet.com.br/charts/hellnet-service-0.1.0.tgz
+    version: 0.1.0
   test-app:
   - annotations:
       artifacthub.io/changes: |
@@ -10,7 +29,7 @@ entries:
       artifacthub.io/repository: hellnet
     apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-07-06T06:53:23.362368-03:00"
+    created: "2026-10-01T22:05:25.960514-03:00"
     description: A simple test chart for the hellnet Helm repository
     digest: 46c6a232218a7978e84ddb234db64afc939c89088e6ff5b8fa2c4b4c79756bd9
     name: test-app
@@ -20,7 +39,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2026-07-06T06:53:23.362257-03:00"
+    created: "2026-10-01T22:05:25.959815-03:00"
     description: A Helm chart for Kubernetes
     digest: ef4e6a6c6e8a4023cc2d37ca1fe9ff2d6cd2f296d2b310aa69cbd814e73ba0d3
     name: test-app
@@ -28,4 +47,4 @@ entries:
     urls:
     - https://charts.hellnet.com.br/charts/test-app-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-06T06:53:23.362072-03:00"
+generated: "2026-10-01T22:05:25.959168-03:00"

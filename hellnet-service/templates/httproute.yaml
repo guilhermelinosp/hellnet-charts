@@ -1,0 +1,23 @@
+{{- if and .Values.route.enabled .Values.containerPort .Values.service.enabled }}
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: {{ include "hellnet-service.fullname" . }}
+  labels:
+    {{- include "hellnet-service.labels" . | nindent 4 }}
+spec:
+  hostnames:
+    {{- toYaml (required "route.hostnames is required when route.enabled" .Values.route.hostnames) | nindent 4 }}
+  parentRefs:
+    - name: {{ .Values.route.parentRef.name }}
+      namespace: {{ .Values.route.parentRef.namespace }}
+      sectionName: {{ .Values.route.parentRef.sectionName }}
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: {{ include "hellnet-service.fullname" . }}
+          port: {{ .Values.service.port }}
+{{- end }}

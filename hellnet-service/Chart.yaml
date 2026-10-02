@@ -1,0 +1,13 @@
+apiVersion: v2
+name: hellnet-service
+description: Generic chart for a hellnet Go service (Deployment, optional Service and Gateway API HTTPRoute) with restricted pod security
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+annotations:
+  artifacthub.io/changes: |
+    - Initial release
+  artifacthub.io/maintainers: |
+    - name: guilhermelinosp
+      email: guilhermelino@hellnet.com.br
+  artifacthub.io/repository: hellnet
